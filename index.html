@@ -250,6 +250,13 @@
     </div>
 
     <script>
+
+        <!-- TODO: Re-intro the animation on mobile. For now this is good enough. -->
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        if (isMobile) {
+            document.querySelectorAll('.hidden').forEach(el => el.classList.remove('hidden'));
+        }
+
         // GSAP ScrollTrigger to animate elements on scroll
         gsap.registerPlugin(ScrollTrigger);
 

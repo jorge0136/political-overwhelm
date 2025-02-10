@@ -9,14 +9,12 @@
             --bg-color: #ffffff;
             --text-color: #000000;
             --accent-color: #ff0000;
-            --shadow: rgba(0, 0, 0, 0.1);
         }
 
         .dark-mode {
             --bg-color: #000000;
             --text-color: #ffffff;
             --accent-color: #ff3333;
-            --shadow: rgba(255, 255, 255, 0.1);
         }
 
         body {
@@ -59,14 +57,7 @@
             transform: translateY(0) !important;
         }
 
-        blockquote {
-            font-size: 36px;
-            font-style: italic;
-            border-left: 5px solid var(--accent-color);
-            padding-left: 20px;
-        }
-
-        p, li {
+        blockquote, p, ul {
             font-size: 32px;
             font-weight: 600;
         }
@@ -78,6 +69,11 @@
 
         li {
             padding: 14px 0;
+        }
+
+        /* Ensure everything except the header is hidden at first */
+        .scroll-content {
+            visibility: hidden;
         }
 
         /* Dark Mode Toggle */
@@ -111,33 +107,35 @@
     <div class="container">
         <h1>Your Overwhelm is the Goal.</h1>
 
-        <blockquote class="hidden">"As a sociologist, I need to tell you: Your overwhelm is the goal."</blockquote>
+        <div class="scroll-content">
+            <blockquote class="hidden">"As a sociologist, I need to tell you: Your overwhelm is the goal."</blockquote>
 
-        <p class="hidden">The flood of 200+ executive orders in Trump's first days exemplifies Naomi Klein's <strong>"shock doctrine"</strong>.</p>
+            <p class="hidden">The flood of 200+ executive orders in Trump's first days exemplifies Naomi Klein's <strong>"shock doctrine"</strong>.</p>
 
-        <p class="hidden">Chaos and crisis push through radical changes while people are too disoriented to resist.</p>
+            <p class="hidden">Chaos and crisis push through radical changes while people are too disoriented to resist.</p>
 
-        <p class="hidden">This isn't just politics as usual – it's a strategic exploitation of cognitive limits.</p>
+            <p class="hidden">This isn't just politics as usual – it's a strategic exploitation of cognitive limits.</p>
 
-        <p class="hidden">McLuhan predicted this: <strong>When humans face information overload, they become passive and disengaged.</strong></p>
+            <p class="hidden">McLuhan predicted this: <strong>When humans face information overload, they become passive and disengaged.</strong></p>
 
-        <p class="hidden">The rapid-fire executive orders create a cognitive bottleneck.</p>
+            <p class="hidden">The rapid-fire executive orders create a cognitive bottleneck.</p>
 
-        <p class="hidden">Citizens and media can’t analyze any single policy before another takes its place.</p>
+            <p class="hidden">Citizens and media can’t analyze any single policy before another takes its place.</p>
 
-        <p class="hidden">Agenda-setting theory explains the strategy: When multiple major policies compete for attention, it fragments public discourse.</p>
+            <p class="hidden">Agenda-setting theory explains the strategy: When multiple major policies compete for attention, it fragments public discourse.</p>
 
-        <p class="hidden"><strong>The result?</strong> Weakened democratic oversight and reduced public engagement.</p>
+            <p class="hidden"><strong>The result?</strong> Weakened democratic oversight and reduced public engagement.</p>
 
-        <h2 class="hidden">What now?</h2>
+            <h2 class="hidden">What now?</h2>
 
-        <ul>
-            <li class="hidden"><strong>Set boundaries:</strong> Focus on 2-3 key issues. You can't track everything – that's by design.</li>
-            <li class="hidden"><strong>Use aggregators & experts:</strong> Find trusted analysts who explain patterns, not just events.</li>
-            <li class="hidden"><strong>Remember:</strong> Feeling overwhelmed is the point. Recognizing this gives you power.</li>
-            <li class="hidden"><strong>Practice going slow:</strong> Wait 48 hours before reacting. Initial reports miss context.</li>
-            <li class="hidden"><strong>Build community:</strong> Share the cognitive load. Network intelligence beats overload.</li>
-        </ul>
+            <ul>
+                <li class="hidden"><strong>Set boundaries:</strong> Focus on 2-3 key issues. You can't track everything – that's by design.</li>
+                <li class="hidden"><strong>Use aggregators & experts:</strong> Find trusted analysts who explain patterns, not just events.</li>
+                <li class="hidden"><strong>Remember:</strong> Feeling overwhelmed is the point. Recognizing this gives you power.</li>
+                <li class="hidden"><strong>Practice going slow:</strong> Wait 48 hours before reacting. Initial reports miss context.</li>
+                <li class="hidden"><strong>Build community:</strong> Share the cognitive load. Network intelligence beats overload.</li>
+            </ul>
+        </div>
     </div>
 
     <script>
@@ -156,6 +154,10 @@
 
         // Scroll Animation
         const scrollItems = document.querySelectorAll(".hidden");
+        const scrollContent = document.querySelector(".scroll-content");
+
+        // Ensure text remains hidden until scrolling starts
+        scrollContent.style.visibility = "visible";
 
         const observer = new IntersectionObserver(
             (entries) => {

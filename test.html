@@ -5,107 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Overwhelm is the Goal</title>
     <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --card-bg: #ffffff;
-            --accent-color: #0077cc;
-            --quote-border: #0077cc;
-            --list-bg: #0077cc;
-            --shadow: rgba(0, 0, 0, 0.1);
-        }
-
-        /* Dark mode styles */
-        .dark-mode {
-            --bg-color: #121212;
-            --text-color: #e0e0e0;
-            --card-bg: #1e1e1e;
-            --accent-color: #1fa2ff;
-            --quote-border: #1fa2ff;
-            --list-bg: #1fa2ff;
-            --shadow: rgba(255, 255, 255, 0.1);
-        }
-
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-        }
-
-        .container {
-            max-width: 700px;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px var(--shadow);
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        h1 {
-            font-size: 28px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        blockquote {
-            font-style: italic;
-            padding-left: 20px;
-            border-left: 4px solid var(--quote-border);
-            margin: 20px 0;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            background: var(--list-bg);
-            color: #ffffff;
-            padding: 14px;
-            border-radius: 6px;
-            margin-bottom: 12px;
-            font-size: 17px;
-            box-shadow: 2px 2px 6px var(--shadow);
-        }
-
-        li strong {
-            font-weight: bold;
-        }
-
-        /* Dark Mode Toggle */
-        .toggle-container {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 10px;
-        }
-
-        .toggle-btn {
-            background: var(--accent-color);
-            color: #fff;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .toggle-btn:hover {
-            background: #005fa3;
-        }
-    </style>
+      :root {
+          --bg-color: #f8f9fa;
+          --text-color: #333;
+          --card-bg: #ffffff;
+          --accent-color: #0077cc;
+          --quote-border: #0077cc;
+          --list-bg: #d4edda; /* Softer green */
+          --list-text: #155724; /* Darker green text */
+          --shadow: rgba(0, 0, 0, 0.1);
+      }
+  
+      /* Dark mode styles */
+      .dark-mode {
+          --bg-color: #121212;
+          --text-color: #e0e0e0;
+          --card-bg: #1e1e1e;
+          --accent-color: #1fa2ff;
+          --quote-border: #1fa2ff;
+          --list-bg: #2d4a3d; /* Darker green */
+          --list-text: #a8d5ba; /* Muted soft green */
+          --shadow: rgba(255, 255, 255, 0.1);
+      }
+  
+      body {
+          font-family: 'Inter', Arial, sans-serif;
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          margin: 0;
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+  
+      .container {
+          max-width: 700px;
+          background: var(--card-bg);
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0px 4px 10px var(--shadow);
+          transition: background-color 0.3s ease-in-out;
+      }
+  
+      h1 {
+          font-size: 28px;
+          text-align: center;
+          margin-bottom: 20px;
+      }
+  
+      p {
+          font-size: 18px;
+          line-height: 1.6;
+          margin-bottom: 16px;
+      }
+  
+      blockquote {
+          font-style: italic;
+          padding-left: 20px;
+          border-left: 4px solid var(--quote-border);
+          margin: 20px 0;
+      }
+  
+      ul {
+          list-style: none;
+          padding: 0;
+      }
+  
+      li {
+          background: var(--list-bg);
+          color: var(--list-text);
+          padding: 14px;
+          border-radius: 6px;
+          margin-bottom: 12px;
+          font-size: 17px;
+          box-shadow: 2px 2px 6px var(--shadow);
+      }
+  
+      li strong {
+          font-weight: bold;
+      }
+  </style>  
 </head>
 <body>
     <div class="container">

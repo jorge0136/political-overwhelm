@@ -8,7 +8,7 @@
         :root {
             --bg-color: #000000;
             --text-color: #ffffff;
-            --accent-color: #ff3333;
+            --accent-color: #3399ff;
         }
 
         html, body {
@@ -26,7 +26,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            overflow-y: scroll;
+            overflow-y: auto; /* Allow proper scrolling */
             padding: 0 20px;
         }
 
@@ -104,19 +104,19 @@
         <h1 style="margin-bottom: 300px;">is the Goal.</h1>
 
         <div class="scroll-content">
-            <blockquote class="hidden">"As a sociologist, I need to tell you: Your overwhelm is the goal."</blockquote>
+            <p class="hidden">The sociologist Jennifer Walters tells us:<sup><a href="#footnote1" style="color: var(--accent-color); text-decoration: none;">[1]</a></sup></p>
 
             <p class="hidden">The flood of 200+ executive orders in Trump's first days exemplifies Naomi Klein's <strong>"shock doctrine"</strong>.</p>
 
             <p class="hidden">Chaos and crisis push through radical changes while people are too disoriented to resist.</p>
 
-            <p class="hidden">This isn't just politics as usual – it's a strategic exploitation of cognitive limits.</p>
+            <p class="hidden">This isn't just politics as usual - it's a strategic exploitation of cognitive limits.</p>
 
-            <p class="hidden">McLuhan predicted this: <strong>When humans face information overload, they become passive and disengaged.</strong></p>
+            <p class="hidden">Media theorist McLuhan predicted this: <strong>When humans face information overload, they become passive and disengaged.</strong><sup><a href="#footnote2" style="color: var(--accent-color); text-decoration: none;">[2]</a></sup></p>
 
             <p class="hidden">The rapid-fire executive orders create a cognitive bottleneck.</p>
 
-            <p class="hidden">Citizens and media can’t analyze any single policy before another takes its place.</p>
+            <p class="hidden">Citizens and media can't analyze any single policy before another takes its place.</p>
 
             <p class="hidden">Agenda-setting theory explains the strategy: When multiple major policies compete for attention, it fragments public discourse.</p>
 
@@ -125,13 +125,23 @@
             <h2 class="hidden">What now?</h2>
 
             <ul>
-                <li class="hidden"><strong>Set boundaries:</strong> Focus on 2-3 key issues. You can't track everything – that's by design.</li>
+                <li class="hidden"><strong>Set boundaries:</strong> Focus on 2-3 key issues. You can't track everything - that's by design.</li>
                 <li class="hidden"><strong>Use aggregators & experts:</strong> Find trusted analysts who explain patterns, not just events.</li>
                 <li class="hidden"><strong>Remember:</strong> Feeling overwhelmed is the point. Recognizing this gives you power.</li>
                 <li class="hidden"><strong>Practice going slow:</strong> Wait 48 hours before reacting. Initial reports miss context.</li>
                 <li class="hidden"><strong>Build community:</strong> Share the cognitive load. Network intelligence beats overload.</li>
             </ul>
         </div>
+        <div style="height: 200px;"></div>
+        
+        <footer>
+            <p id="footnote1" style="font-size: 16px; color: var(--text-color);">
+                [1] Source: <a href="https://www.threads.net/@itsjenniferwalter/post/DFIu3Q2q-5P?hl=en" style="color: var(--accent-color); text-decoration: none;">itsjenniferwalter threads post, 2025.</a>
+                </p>
+            <p id="footnote2" style="font-size: 16px; color: var(--text-color);">
+            [2] Source: <a href="https://blogs.ubc.ca/fnis401fnicole/2016/09/25/discovering-mcluhan-and-todays-information-overload/" style="color: var(--accent-color); text-decoration: none;">McLuhan, Marshall. "Understanding Media: The Extensions of Man." 1964.</a>
+            </p>
+        </footer>
     </div>
 
     <script>

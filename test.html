@@ -109,6 +109,40 @@
             50% { opacity: 0; }
         }
 
+        .call-to-action {
+            background-color: var(--accent-color);
+            color: #000000;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 40px 0;
+            }
+
+            .call-to-action h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            }
+
+            .call-to-action p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            }
+
+            .cta-button {
+            background-color: #ffffff;
+            color: var(--accent-color);
+            padding: 10px 20px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            .cta-button:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            }
+
     </style>
     <!-- Include GSAP and ScrollTrigger from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -155,7 +189,11 @@
                 <li class="hidden"><strong>Build community:</strong> Share the cognitive load. Network intelligence beats overload.</li>
             </ol>
         </div>
-        <div style="height: 200px;"></div>
+        <div class="call-to-action" style="margin-top: 100px;">
+            <h2>Don't stay paralyzed.</h2>
+            <p>I invite you to slowly and kindly face your overwhelm. Turn it into action.</p>
+            <a href="https://www.example.com" class="cta-button">Join the Discord</a>
+        </div>
         
         <footer>
             <p id="footnote1" style="font-size: 16px; color: var(--text-color);">
@@ -180,38 +218,33 @@
             end: "bottom top",
             onUpdate: (self) => {
                 const arrow = document.querySelector('.down-arrow');
-                console.log('Scroll progress:', self.progress); // Log scroll progress
-                console.log("Arrow", arrow);
-                console.log('Scroll progress:', self.progress); // Log scroll progress
-                if (self.progress > 1.0) {
-                    console.log('Hiding arrow');
+                const firstParagraph = document.querySelector('.scroll-content p');
+                if (firstParagraph && parseFloat(window.getComputedStyle(firstParagraph).opacity) >= 0.4) {
                     arrow.classList.add('hidden');
-                    console.log("Arrow after hiding", arrow);
                 } else {
-                    console.log('Showing arrow');
                     arrow.classList.remove('hidden');
                 }
             }
         });
-        
 
         gsap.utils.toArray('.hidden').forEach((el, index) => {
             gsap.fromTo(el, 
-                { opacity: 0, y: 50 }, 
-                { 
-                    opacity: 1, 
-                    y: 0, 
-                    duration: 1, 
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 90%",  // Trigger when the element is 90% visible
-                        end: "bottom 10%", // Stop the animation when it's fully in view
-                        scrub: 1,          // Scrub animation with scroll position
-                        markers: false,    // You can set to true to see the trigger points for debugging
-                        onEnter: () => el.classList.remove('hidden') // Remove hidden class on enter
-                    },
-                    delay: index * 0.2 // Add delay for staggered animation
-                }
+            { opacity: 0, y: 50 }, 
+            { 
+                opacity: 1, 
+                y: 0, 
+                duration: 1, 
+                scrollTrigger: {
+                trigger: el,
+                start: "top 75%",  // Trigger when the element is 75% visible
+                end: "bottom 25%", // Stop the animation when it's fully in view
+                scrub: 1,          // Scrub animation with scroll position
+                markers: false,    // You can set to true to see the trigger points for debugging
+                onEnter: () => el.classList.remove('hidden'), // Remove hidden class on enter
+                onEnterBack: () => el.classList.remove('hidden') // Ensure it shows when scrolling back up
+                },
+                delay: index * 0.2 // Add delay for staggered animation
+            }
             );
         });
     </script>

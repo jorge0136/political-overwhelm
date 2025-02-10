@@ -168,13 +168,53 @@
             color: var(--text-color);
         }
     </style>
-    <!-- Include GSAP and ScrollTrigger from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
-        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-            console.error('GSAP or ScrollTrigger failed to load.');
+        <!-- TODO: Re-intro the animation on mobile. For now this is good enough. -->
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+        if (isMobile) {
+            document.querySelectorAll('.hidden').forEach(el => el.classList.remove('hidden'));
         }
+
+        // GSAP ScrollTrigger to animate elements on scroll
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Add a hidden class to the arrow after scrolling
+        ScrollTrigger.create({
+            start: "top top",
+            end: "bottom top",
+            onUpdate: (self) => {
+                const arrow = document.querySelector('.down-arrow');
+                const firstParagraph = document.querySelector('.scroll-content p');
+                if (firstParagraph && parseFloat(window.getComputedStyle(firstParagraph).opacity) >= 0.4) {
+                    arrow.classList.add('hidden');
+                } else {
+                    arrow.classList.remove('hidden');
+                }
+            }
+        });
+
+        gsap.utils.toArray('.hidden').forEach((el, index) => {
+            gsap.fromTo(el,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 75%",  // Trigger when the element is 75% visible
+                        end: "bottom 25%", // Stop the animation when it's fully in view
+                        scrub: 1,          // Scrub animation with scroll position
+                        markers: false,    // You can set to true to see the trigger points for debugging
+                        onEnter: () => el.classList.remove('hidden'), // Remove hidden class on enter
+                        onEnterBack: () => el.classList.remove('hidden') // Ensure it shows when scrolling back up
+                    },
+                    delay: index * 0.2 // Add delay for staggered animation
+                }
+            );
+        });
     </script>
 </head>
 
@@ -248,54 +288,6 @@
             </p>
         </footer>
     </div>
-
-    <script>
-
-        <!-- TODO: Re-intro the animation on mobile. For now this is good enough. -->
-        const isMobile = window.matchMedia("(max-width: 768px)").matches;
-        if (isMobile) {
-            document.querySelectorAll('.hidden').forEach(el => el.classList.remove('hidden'));
-        }
-
-        // GSAP ScrollTrigger to animate elements on scroll
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Add a hidden class to the arrow after scrolling
-        ScrollTrigger.create({
-            start: "top top",
-            end: "bottom top",
-            onUpdate: (self) => {
-                const arrow = document.querySelector('.down-arrow');
-                const firstParagraph = document.querySelector('.scroll-content p');
-                if (firstParagraph && parseFloat(window.getComputedStyle(firstParagraph).opacity) >= 0.4) {
-                    arrow.classList.add('hidden');
-                } else {
-                    arrow.classList.remove('hidden');
-                }
-            }
-        });
-
-        gsap.utils.toArray('.hidden').forEach((el, index) => {
-            gsap.fromTo(el,
-                { opacity: 0, y: 50 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 75%",  // Trigger when the element is 75% visible
-                        end: "bottom 25%", // Stop the animation when it's fully in view
-                        scrub: 1,          // Scrub animation with scroll position
-                        markers: false,    // You can set to true to see the trigger points for debugging
-                        onEnter: () => el.classList.remove('hidden'), // Remove hidden class on enter
-                        onEnterBack: () => el.classList.remove('hidden') // Ensure it shows when scrolling back up
-                    },
-                    delay: index * 0.2 // Add delay for staggered animation
-                }
-            );
-        });
-    </script>
 </body>
 
 </html>

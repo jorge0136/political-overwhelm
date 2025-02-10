@@ -71,6 +71,16 @@
             background-color: var(--bg-color);
             color: var(--text-color);
         }
+        .footnote-link {
+            font-size: 14px;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .footnote-link sup {
+            font-size: inherit;
+            color: inherit;
+        }
 
         /* Blinking arrow */
         .down-arrow {
@@ -101,18 +111,18 @@
     <div class="down-arrow" style="top: auto; bottom: 20px; right: 20px; left: auto;">⬇</div>
     <div class="container">
         <h1 >Your Overwhelm</h1>
-        <h1 style="margin-bottom: 300px;">is the Goal.</h1>
+        <h1 style="margin-bottom: 500px;">is the Goal.</h1>
 
         <div class="scroll-content">
-            <p class="hidden">The sociologist Jennifer Walters tells us:<sup><a href="#footnote1" style="color: var(--accent-color); text-decoration: none;">[1]</a></sup></p>
+            <p class="hidden">The sociologist Jennifer Walters tells us:<sup><a href="#footnote1" class="footnote-link">[1]</a></sup></p>
 
-            <p class="hidden">The flood of 200+ executive orders in Trump's first days exemplifies Naomi Klein's <strong>"shock doctrine"</strong>.</p>
+            <p class="hidden">The flood of 200+ executive orders in Trump's first days exemplifies Naomi Klein's <strong>"shock doctrine"</strong>.<sup><a href="#footnote2" class="footnote-link">[2]</a></sup></p>
 
             <p class="hidden">Chaos and crisis push through radical changes while people are too disoriented to resist.</p>
 
             <p class="hidden">This isn't just politics as usual - it's a strategic exploitation of cognitive limits.</p>
 
-            <p class="hidden">Media theorist McLuhan predicted this: <strong>When humans face information overload, they become passive and disengaged.</strong><sup><a href="#footnote2" style="color: var(--accent-color); text-decoration: none;">[2]</a></sup></p>
+            <p class="hidden">Media theorist McLuhan predicted this: <strong>When humans face information overload, they become passive and disengaged.</strong><sup><a href="#footnote3" class="footnote-link">[3]</a></sup></p>
 
             <p class="hidden">The rapid-fire executive orders create a cognitive bottleneck.</p>
 
@@ -137,9 +147,12 @@
         <footer>
             <p id="footnote1" style="font-size: 16px; color: var(--text-color);">
                 [1] Source: <a href="https://www.threads.net/@itsjenniferwalter/post/DFIu3Q2q-5P?hl=en" style="color: var(--accent-color); text-decoration: none;">itsjenniferwalter threads post, 2025.</a>
-                </p>
+            </p>
             <p id="footnote2" style="font-size: 16px; color: var(--text-color);">
-            [2] Source: <a href="https://blogs.ubc.ca/fnis401fnicole/2016/09/25/discovering-mcluhan-and-todays-information-overload/" style="color: var(--accent-color); text-decoration: none;">McLuhan, Marshall. "Understanding Media: The Extensions of Man." 1964.</a>
+                [2] Source: <a href="https://en.wikipedia.org/wiki/The_Shock_Doctrine" style="color: var(--accent-color); text-decoration: none;">The Shock Doctrine - Wikipedia</a>
+            </p>
+            <p id="footnote3" style="font-size: 16px; color: var(--text-color);">
+            [3] Source: <a href="https://blogs.ubc.ca/fnis401fnicole/2016/09/25/discovering-mcluhan-and-todays-information-overload/" style="color: var(--accent-color); text-decoration: none;">McLuhan, Marshall. "Understanding Media: The Extensions of Man." 1964.</a>
             </p>
         </footer>
     </div>

@@ -6,64 +6,61 @@
     <title>Your Overwhelm is the Goal</title>
     <style>
         :root {
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --card-bg: #ffffff;
-            --accent-color: #0077cc;
-            --quote-border: #0077cc;
-            --list-bg: #d4edda;
-            --list-text: #155724;
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #ff0000;
             --shadow: rgba(0, 0, 0, 0.1);
         }
 
         .dark-mode {
-            --bg-color: #121212;
-            --text-color: #e0e0e0;
-            --card-bg: #1e1e1e;
-            --accent-color: #1fa2ff;
-            --quote-border: #1fa2ff;
-            --list-bg: #2d4a3d;
-            --list-text: #a8d5ba;
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --accent-color: #ff3333;
             --shadow: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            font-family: 'Inter', Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            min-height: 100vh;
+            overflow-x: hidden;
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
         }
 
         .container {
-            max-width: 700px;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px var(--shadow);
-            transition: background-color 0.3s ease-in-out;
-            overflow: hidden;
+            max-width: 800px;
+            text-align: left;
+            padding: 20px;
+            line-height: 1.4;
         }
 
-        h1, h2, p, blockquote, li {
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 50px;
+            opacity: 1;
+        }
+
+        p, blockquote, li {
+            font-size: 28px;
+            font-weight: 600;
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(50px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        .fade-in {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
         blockquote {
-            font-style: italic;
+            border-left: 5px solid var(--accent-color);
             padding-left: 20px;
-            border-left: 4px solid var(--quote-border);
-            margin: 20px 0;
+            font-style: italic;
         }
 
         ul {
@@ -72,80 +69,79 @@
         }
 
         li {
-            background: var(--list-bg);
-            color: var(--list-text);
-            padding: 14px;
-            border-radius: 6px;
-            margin-bottom: 12px;
-            font-size: 17px;
-            box-shadow: 2px 2px 6px var(--shadow);
+            padding: 14px 0;
+            font-size: 26px;
         }
 
-        li strong {
-            font-weight: bold;
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
 
         /* Dark Mode Toggle */
         .toggle-container {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 10px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
         }
 
         .toggle-btn {
             background: var(--accent-color);
             color: #fff;
             border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 10px 18px;
+            border-radius: 6px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
             transition: background 0.3s ease-in-out;
         }
 
         .toggle-btn:hover {
-            background: #005fa3;
+            background: #cc0000;
         }
     </style>
 </head>
 <body>
+    <div class="toggle-container">
+        <button class="toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+
     <div class="container">
-        <div class="toggle-container">
-            <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-        </div>
+        <h1 class="scroll-item fade-in">Your Overwhelm is the Goal.</h1>
 
-        <h1 class="scroll-item">The sociologist Jennifer Walters tells us:</h1>
+        <blockquote class="scroll-item">"As a sociologist, I need to tell you: Your overwhelm is the goal."</blockquote>
 
-        <blockquote class="scroll-item">As a sociologist, I need to tell you: Your overwhelm is the goal.</blockquote>
+        <p class="scroll-item">The flood of 200+ executive orders in Trump's first days exemplifies Naomi Klein's <strong>"shock doctrine"</strong>.</p>
 
-        <p class="scroll-item">The flood of 200+ executive orders in Trump's first days exemplifies Naomi Klein's <strong>"shock doctrine"</strong> — using chaos and crisis to push through radical changes while people are too disoriented to effectively resist. This isn't just politics as usual — it's a strategic exploitation of cognitive limits.</p>
+        <p class="scroll-item">Chaos and crisis push through radical changes while people are too disoriented to resist.</p>
 
-        <p class="scroll-item">Media theorist McLuhan predicted this: <strong>When humans face information overload, they become passive and disengaged.</strong> The rapid-fire executive orders create a cognitive bottleneck, making it nearly impossible for citizens and media to thoroughly analyze any single policy.</p>
+        <p class="scroll-item">This isn't just politics as usual – it's a strategic exploitation of cognitive limits.</p>
 
-        <p class="scroll-item"><strong>Agenda-setting theory</strong> explains the strategy: When multiple major policies compete for attention simultaneously, it fragments public discourse. Traditional media can't keep up with the pace, leading to superficial coverage.</p>
+        <p class="scroll-item">McLuhan predicted this: <strong>When humans face information overload, they become passive and disengaged.</strong></p>
 
-        <p class="scroll-item">The result? <strong>Weakened democratic oversight and reduced public engagement.</strong></p>
+        <p class="scroll-item">The rapid-fire executive orders create a cognitive bottleneck.</p>
+
+        <p class="scroll-item">Citizens and media can’t analyze any single policy before another takes its place.</p>
+
+        <p class="scroll-item">Agenda-setting theory explains the strategy: When multiple major policies compete for attention, it fragments public discourse.</p>
+
+        <p class="scroll-item"><strong>The result?</strong> Weakened democratic oversight and reduced public engagement.</p>
 
         <h2 class="scroll-item">What now?</h2>
+
         <ul>
-            <li class="scroll-item"><strong>Set boundaries:</strong> Pick 2-3 key issues you deeply care about and focus your attention there. You can't track everything - that's by design. Impact comes from sustained focus, not scattered awareness.</li>
-            <li class="scroll-item"><strong>Use aggregators & experts:</strong> Find trusted analysts who do the heavy lifting of synthesis. Look for those explaining patterns, not just events.</li>
-            <li class="scroll-item"><strong>Remember:</strong> Feeling overwhelmed is the point. When you recognize this, you regain some power. Take breaks. Process. This is a marathon.</li>
-            <li class="scroll-item"><strong>Practice going slow:</strong> Wait 48 hours before reacting to new policies. The urgent clouds the important. Initial reporting often misses context.</li>
-            <li class="scroll-item"><strong>Build community:</strong> Share the cognitive load. Different people track different issues. Network intelligence beats individual overload.</li>
+            <li class="scroll-item"><strong>Set boundaries:</strong> Focus on 2-3 key issues. You can't track everything – that's by design.</li>
+            <li class="scroll-item"><strong>Use aggregators & experts:</strong> Find trusted analysts who explain patterns, not just events.</li>
+            <li class="scroll-item"><strong>Remember:</strong> Feeling overwhelmed is the point. Recognizing this gives you power.</li>
+            <li class="scroll-item"><strong>Practice going slow:</strong> Wait 48 hours before reacting. Initial reports miss context.</li>
+            <li class="scroll-item"><strong>Build community:</strong> Share the cognitive load. Network intelligence beats overload.</li>
         </ul>
     </div>
 
     <script>
         function toggleDarkMode() {
-            const body = document.body;
-            body.classList.toggle("dark-mode");
-
-            if (body.classList.contains("dark-mode")) {
-                localStorage.setItem("theme", "dark");
-            } else {
-                localStorage.setItem("theme", "light");
-            }
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
         }
 
         function loadTheme() {
@@ -160,13 +156,12 @@
         const scrollItems = document.querySelectorAll(".scroll-item");
 
         const observer = new IntersectionObserver(
-            (entries, observer) => {
+            (entries) => {
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
                         setTimeout(() => {
                             entry.target.classList.add("fade-in");
-                        }, index * 150); // Staggered delay effect
-                        observer.unobserve(entry.target);
+                        }, index * 150); // Staggered delay
                     }
                 });
             },

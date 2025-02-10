@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,13 @@
             --accent-color: #3399ff;
         }
 
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
             background-color: var(--bg-color);
             color: var(--text-color);
         }
@@ -26,7 +29,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            overflow-y: auto; /* Allow proper scrolling */
+            overflow-y: auto;
+            /* Allow proper scrolling */
             padding: 0 20px;
         }
 
@@ -46,7 +50,8 @@
         }
 
         h2 {
-            font-size: 48px; /* Adjust the size as needed */
+            font-size: 48px;
+            /* Adjust the size as needed */
             font-weight: bold;
             text-align: center;
             margin-top: 40px;
@@ -58,7 +63,9 @@
             transform: translateY(50px);
         }
 
-        blockquote, p, ol {
+        blockquote,
+        p,
+        ol {
             font-size: 32px;
             margin-bottom: 20px;
         }
@@ -77,6 +84,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
         }
+
         .footnote-link {
             font-size: 14px;
             color: var(--accent-color);
@@ -105,52 +113,60 @@
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
 
         .call-to-action {
-            background-color: #ffffff; 
+            background-color: #ffffff;
             color: #000000;
             text-align: center;
             padding: 20px;
             border-radius: 10px;
             margin: 100px 0;
-            }
+        }
 
-            .call-to-action h2 {
+        .call-to-action h2 {
             font-size: 36px;
             margin-bottom: 10px;
-            }
+        }
 
-            .call-to-action p {
+        .call-to-action p {
             font-size: 24px;
             margin-bottom: 20px;
-            }
+        }
 
-            .cta-button {
-                background-color: #ffffff;
-                color: var(--accent-color);
-                padding: 10px 20px;
-                margin: 50px auto; /* Center the button horizontally */
-                font-size: 20px;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: background-color 0.3s ease, color 0.3s ease;
-                border: 2px solid var(--accent-color);
-                display: block; /* Ensure margin is respected */
-            }
+        .cta-button {
+            background-color: #ffffff;
+            color: var(--accent-color);
+            padding: 10px 20px;
+            margin: 50px auto;
+            /* Center the button horizontally */
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 2px solid var(--accent-color);
+            display: block;
+            /* Ensure margin is respected */
+        }
 
-            .cta-button:hover {
+        .cta-button:hover {
             background-color: var(--accent-color);
-            color:  #ffffff; 
-            }
+            color: #ffffff;
+        }
 
-            footer p {
-                font-size: 16px;
-                color: var(--text-color);
-            }
-
+        footer p {
+            font-size: 16px;
+            color: var(--text-color);
+        }
     </style>
     <!-- Include GSAP and ScrollTrigger from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -161,40 +177,52 @@
         }
     </script>
 </head>
+
 <body>
     <div class="down-arrow" style="top: auto; bottom: 20px; right: 20px; left: auto;">⬇</div>
     <div class="container">
-        <h1 >Your Overwhelm</h1>
+        <h1>Your Overwhelm</h1>
         <h1 style="margin-bottom: 300px;">is the Goal.</h1>
 
         <div class="scroll-content">
-            <p class="hidden">The sociologist Jennifer Walters tells us:<sup><a href="#footnote1" class="footnote-link">[1]</a></sup></p>
+            <p class="hidden">The sociologist Jennifer Walters tells us:<sup><a href="#footnote1"
+                        class="footnote-link">[1]</a></sup></p>
 
-            <p class="hidden">The flood of 200+ executive orders in Trump's first days exemplifies Naomi Klein's <strong>"shock doctrine"</strong>.<sup><a href="#footnote2" class="footnote-link">[2]</a></sup></p>
+            <p class="hidden">The flood of 200+ executive orders in Trump's first days exemplifies Naomi Klein's
+                <strong>"shock doctrine"</strong>.<sup><a href="#footnote2" class="footnote-link">[2]</a></sup></p>
 
-            <p class="hidden">Chaos and crisis push through radical changes while people are too disoriented to resist.</p>
+            <p class="hidden">Chaos and crisis push through radical changes while people are too disoriented to resist.
+            </p>
 
             <p class="hidden">This isn't just politics as usual - it's a strategic exploitation of cognitive limits.</p>
 
-            <p class="hidden">Media theorist McLuhan predicted this: <strong>When humans face information overload, they become passive and disengaged.</strong><sup><a href="#footnote3" class="footnote-link">[3]</a></sup></p>
+            <p class="hidden">Media theorist McLuhan predicted this: <strong>When humans face information overload, they
+                    become passive and disengaged.</strong><sup><a href="#footnote3" class="footnote-link">[3]</a></sup>
+            </p>
 
             <p class="hidden">The rapid-fire executive orders create a cognitive bottleneck.</p>
 
             <p class="hidden">Citizens and media can't analyze any single policy before another takes its place.</p>
 
-            <p class="hidden">Agenda-setting theory explains the strategy: When multiple major policies compete for attention, it fragments public discourse.</p>
+            <p class="hidden">Agenda-setting theory explains the strategy: When multiple major policies compete for
+                attention, it fragments public discourse.</p>
 
-            <p class="hidden"><strong>The result?</strong></p> 
+            <p class="hidden"><strong>The result?</strong></p>
             <p class="hidden"><strong>Weakened democratic oversight and reduced public engagement.</strong></p>
 
             <h2 class="hidden">What now?</h2>
 
             <ol>
-                <li class="hidden"><strong>Set boundaries:</strong> Focus on 2-3 key issues. You can't track everything - that's by design.</li>
-                <li class="hidden"><strong>Use aggregators & experts:</strong> Find trusted analysts who explain patterns, not just events.</li>
-                <li class="hidden"><strong>Remember:</strong> Feeling overwhelmed is the point. Recognizing this gives you power.</li>
-                <li class="hidden"><strong>Practice going slow:</strong> Wait 48 hours before reacting. Initial reports miss context.</li>
-                <li class="hidden"><strong>Build community:</strong> Share the cognitive load. Network intelligence beats overload.</li>
+                <li class="hidden"><strong>Set boundaries:</strong> Focus on 2-3 key issues. You can't track everything
+                    - that's by design.</li>
+                <li class="hidden"><strong>Use aggregators & experts:</strong> Find trusted analysts who explain
+                    patterns, not just events.</li>
+                <li class="hidden"><strong>Remember:</strong> Feeling overwhelmed is the point. Recognizing this gives
+                    you power.</li>
+                <li class="hidden"><strong>Practice going slow:</strong> Wait 48 hours before reacting. Initial reports
+                    miss context.</li>
+                <li class="hidden"><strong>Build community:</strong> Share the cognitive load. Network intelligence
+                    beats overload.</li>
             </ol>
         </div>
         <div class="call-to-action">
@@ -202,16 +230,21 @@
             <p>I invite you to slowly and kindly face your overwhelm. Turn it into action.</p>
             <a href="https://www.example.com" class="cta-button">Join the Discord</a>
         </div>
-        
+
         <footer>
             <p id="footnote1">
-                [1] Source: <a href="https://www.threads.net/@itsjenniferwalter/post/DFIu3Q2q-5P?hl=en" style="color: var(--accent-color); text-decoration: none;">itsjenniferwalter threads post, 2025.</a>
+                [1] Source: <a href="https://www.threads.net/@itsjenniferwalter/post/DFIu3Q2q-5P?hl=en"
+                    style="color: var(--accent-color); text-decoration: none;">itsjenniferwalter threads post, 2025.</a>
             </p>
             <p id="footnote2">
-                [2] Source: <a href="https://en.wikipedia.org/wiki/The_Shock_Doctrine" style="color: var(--accent-color); text-decoration: none;">The Shock Doctrine - Wikipedia</a>
+                [2] Source: <a href="https://en.wikipedia.org/wiki/The_Shock_Doctrine"
+                    style="color: var(--accent-color); text-decoration: none;">The Shock Doctrine - Wikipedia</a>
             </p>
             <p id="footnote3">
-            [3] Source: <a href="https://blogs.ubc.ca/fnis401fnicole/2016/09/25/discovering-mcluhan-and-todays-information-overload/" style="color: var(--accent-color); text-decoration: none;">McLuhan, Marshall. "Understanding Media: The Extensions of Man." 1964.</a>
+                [3] Source: <a
+                    href="https://blogs.ubc.ca/fnis401fnicole/2016/09/25/discovering-mcluhan-and-todays-information-overload/"
+                    style="color: var(--accent-color); text-decoration: none;">McLuhan, Marshall. "Understanding Media:
+                    The Extensions of Man." 1964.</a>
             </p>
         </footer>
     </div>
@@ -236,25 +269,26 @@
         });
 
         gsap.utils.toArray('.hidden').forEach((el, index) => {
-            gsap.fromTo(el, 
-            { opacity: 0, y: 50 }, 
-            { 
-                opacity: 1, 
-                y: 0, 
-                duration: 1, 
-                scrollTrigger: {
-                trigger: el,
-                start: "top 75%",  // Trigger when the element is 75% visible
-                end: "bottom 25%", // Stop the animation when it's fully in view
-                scrub: 1,          // Scrub animation with scroll position
-                markers: false,    // You can set to true to see the trigger points for debugging
-                onEnter: () => el.classList.remove('hidden'), // Remove hidden class on enter
-                onEnterBack: () => el.classList.remove('hidden') // Ensure it shows when scrolling back up
-                },
-                delay: index * 0.2 // Add delay for staggered animation
-            }
+            gsap.fromTo(el,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 75%",  // Trigger when the element is 75% visible
+                        end: "bottom 25%", // Stop the animation when it's fully in view
+                        scrub: 1,          // Scrub animation with scroll position
+                        markers: false,    // You can set to true to see the trigger points for debugging
+                        onEnter: () => el.classList.remove('hidden'), // Remove hidden class on enter
+                        onEnterBack: () => el.classList.remove('hidden') // Ensure it shows when scrolling back up
+                    },
+                    delay: index * 0.2 // Add delay for staggered animation
+                }
             );
         });
     </script>
 </body>
+
 </html>

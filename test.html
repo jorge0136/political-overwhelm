@@ -90,6 +90,12 @@
             transform: translateX(-50%);
             font-size: 32px;
             animation: blink 2s infinite;
+            transition: opacity 0.5s ease;
+        }
+
+        .down-arrow.hidden {
+            opacity: 0;
+            animation: none;
         }
 
         @keyframes blink {
@@ -160,6 +166,27 @@
     <script>
         // GSAP ScrollTrigger to animate elements on scroll
         gsap.registerPlugin(ScrollTrigger);
+
+        // Add a hidden class to the arrow after scrolling
+        ScrollTrigger.create({
+            start: "top top",
+            end: "bottom top",
+            onUpdate: (self) => {
+                const arrow = document.querySelector('.down-arrow');
+                console.log('Scroll progress:', self.progress); // Log scroll progress
+                console.log("Arrow", arrow);
+                console.log('Scroll progress:', self.progress); // Log scroll progress
+                if (self.progress > 1.0) {
+                    console.log('Hiding arrow');
+                    arrow.classList.add('hidden');
+                    console.log("Arrow after hiding", arrow);
+                } else {
+                    console.log('Showing arrow');
+                    arrow.classList.remove('hidden');
+                }
+            }
+        });
+        
 
         gsap.utils.toArray('.hidden').forEach((el, index) => {
             gsap.fromTo(el, 

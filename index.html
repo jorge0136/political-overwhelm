@@ -183,8 +183,10 @@
             const actionParam = urlParams.get('action');
             if (actionParam !== 'true') {
                 const callToAction = document.querySelector('.call-to-action');
+                const callToActionSpacer = document.querySelector('.call-to-action-spacer');
                 if (callToAction) {
                     callToAction.style.display = 'none';
+                    callToActionSpacer.style.display = 'block';
                 }
             }
 
@@ -283,6 +285,7 @@
             <p>We are using a chat server to pool our collective capacity.</p>
             <a href="https://discord.gg/C8zr2duW" class="cta-button">Join us & find your topic</a>
         </div>
+        <div class="call-to-action-spacer" style="display: none; height: 300px"></div>
 
         <footer>
             <p id="footnote1">

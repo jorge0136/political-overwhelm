@@ -179,6 +179,15 @@
                 document.querySelectorAll('.hidden').forEach(el => el.classList.remove('hidden'));
             }
 
+            const urlParams = new URLSearchParams(window.location.search);
+            const actionParam = urlParams.get('action');
+            if (actionParam !== 'true') {
+                const callToAction = document.querySelector('.call-to-action');
+                if (callToAction) {
+                    callToAction.style.display = 'none';
+                }
+            }
+
             // Hide arrow after scrolling
             ScrollTrigger.create({
                 start: "top top",
